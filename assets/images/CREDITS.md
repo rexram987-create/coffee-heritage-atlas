@@ -4,7 +4,12 @@ This file records the source, creator, license, and accessibility text for every
 
 | File | Section | Creator | Source page | License | Downloaded | Alt text (HE) | Alt text (EN) |
 |---|---|---|---|---|---|---|---|
-| _Add entries here_ |  |  |  |  |  |  |  |
+| `varieties/coffea-arabica-flower-fruit.jpg` | Varieties — Arabica | ゴスロリ | [Wikimedia Commons — Planta coffea arabiga.jpg](https://commons.wikimedia.org/wiki/File:Planta_coffea_arabiga.jpg) | CC0 1.0 Universal | 2026-07-26 | פרחים ופירות צעירים על ענף של צמח קפה ערביקה | Flowers and young fruit on a Coffea arabica branch |
+
+## Notes
+
+- The Arabica image was renamed for consistent project file naming; no visual editing was recorded at the time of upload.
+- Although attribution is not legally required under CC0, the creator and source are credited as a matter of good scholarly practice.
 
 ## Usage rules
 
