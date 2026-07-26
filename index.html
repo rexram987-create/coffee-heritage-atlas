@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="אטלס מורשת הקפה — מוזיאון דיגיטלי דו־לשוני על ההיסטוריה, הזנים, הטקסים והכלים של הקפה.">
+  <title>אטלס מורשת הקפה | Coffee Heritage Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">דלגו לתוכן</a>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="דף הבית">
+      <span class="brand-mark" aria-hidden="true">☕</span>
+      <span><strong data-he="אטלס מורשת הקפה" data-en="Coffee Heritage Atlas">אטלס מורשת הקפה</strong><small data-he="מסע בין אדמה, תרבות וטעם" data-en="A journey through land, culture and flavor">מסע בין אדמה, תרבות וטעם</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="פתיחת תפריט">☰</button>
+    <nav id="main-nav" class="main-nav" aria-label="ניווט ראשי">
+      <a href="#history" data-he="היסטוריה" data-en="History">היסטוריה</a>
+      <a href="#varieties" data-he="זנים" data-en="Varieties">זנים</a>
+      <a href="#rituals" data-he="טקסים" data-en="Rituals">טקסים</a>
+      <a href="#tools" data-he="כלים" data-en="Tools">כלים</a>
+    </nav>
+    <button id="language-toggle" class="language-toggle" type="button" aria-label="Switch to English">EN</button>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="hero-glow hero-glow-one"></div><div class="hero-glow hero-glow-two"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow" data-he="מוזיאון דיגיטלי אינטראקטיבי" data-en="An interactive digital museum">מוזיאון דיגיטלי אינטראקטיבי</p>
+        <h1 data-he="הסיפור העולמי של הקפה, מן הפרי ועד לטקס" data-en="The global story of coffee, from fruit to ritual">הסיפור העולמי של הקפה, מן הפרי ועד לטקס</h1>
+        <p class="hero-copy" data-he="גלו כיצד צמח מאפריקה הפך למשקה עולמי, הכירו את הזנים, טקסי האירוח והכלים שעיצבו תרבויות שלמות." data-en="Discover how an African plant became a global drink, and explore the varieties, hospitality rituals and tools that shaped entire cultures.">גלו כיצד צמח מאפריקה הפך למשקה עולמי, הכירו את הזנים, טקסי האירוח והכלים שעיצבו תרבויות שלמות.</p>
+        <div class="hero-actions"><a class="button primary" href="#history" data-he="התחילו במסע" data-en="Begin the journey">התחילו במסע</a><a class="button ghost" href="#tools" data-he="גלו את הכלים" data-en="Explore the tools">גלו את הכלים</a></div>
+        <div class="hero-facts" aria-label="עובדות מהירות">
+          <div><strong>70+</strong><span data-he="מדינות מגדלות" data-en="growing countries">מדינות מגדלות</span></div>
+          <div><strong>4</strong><span data-he="מינים מרכזיים" data-en="major species">מינים מרכזיים</span></div>
+          <div><strong>500+</strong><span data-he="שנות תרבות בתי קפה" data-en="years of café culture">שנות תרבות בתי קפה</span></div>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="coffee-cup"><div class="steam s1"></div><div class="steam s2"></div><div class="steam s3"></div><div class="cup-liquid"></div></div>
+        <span class="bean bean-one">●</span><span class="bean bean-two">●</span><span class="bean bean-three">●</span>
+      </div>
+    </section>
+
+    <section id="history" class="section history-section">
+      <div class="section-heading reveal"><p class="eyebrow" data-he="מסע בזמן" data-en="A journey through time">מסע בזמן</p><h2 data-he="תחנות מרכזיות בהיסטוריה של הקפה" data-en="Milestones in coffee history">תחנות מרכזיות בהיסטוריה של הקפה</h2><p data-he="עברו בין התחנות ולחצו עליהן כדי לקרוא את הסיפור." data-en="Move through the milestones and select one to read its story.">עברו בין התחנות ולחצו עליהן כדי לקרוא את הסיפור.</p></div>
+      <div class="timeline-shell reveal">
+        <div id="timeline-buttons" class="timeline-buttons" role="tablist" aria-label="ציר זמן"></div>
+        <article id="timeline-panel" class="timeline-panel" role="tabpanel" tabindex="0"></article>
+      </div>
+    </section>
+
+    <section id="varieties" class="section alt-section">
+      <div class="section-heading reveal"><p class="eyebrow" data-he="מן הצמח אל הספל" data-en="From plant to cup">מן הצמח אל הספל</p><h2 data-he="הכירו את משפחת הקפה" data-en="Meet the coffee family">הכירו את משפחת הקפה</h2><p data-he="כל מין מביא עמו תנאי גידול, אופי וטעמים משלו." data-en="Each species brings its own growing conditions, character and flavors.">כל מין מביא עמו תנאי גידול, אופי וטעמים משלו.</p></div>
+      <div id="variety-grid" class="card-grid variety-grid"></div>
+    </section>
+
+    <section id="rituals" class="section rituals-section">
+      <div class="section-heading reveal"><p class="eyebrow" data-he="יותר ממשקה" data-en="More than a drink">יותר ממשקה</p><h2 data-he="טקסי הקפה ומשמעותם" data-en="Coffee rituals and their meaning">טקסי הקפה ומשמעותם</h2><p data-he="קפה הוא שפה של אירוח, כבוד, קהילה וזמן משותף." data-en="Coffee is a language of hospitality, respect, community and shared time.">קפה הוא שפה של אירוח, כבוד, קהילה וזמן משותף.</p></div>
+      <div class="ritual-layout reveal">
+        <div id="ritual-list" class="ritual-list" role="tablist"></div>
+        <article id="ritual-panel" class="ritual-panel" role="tabpanel"></article>
+      </div>
+    </section>
+
+    <section id="tools" class="section alt-section">
+      <div class="section-heading reveal"><p class="eyebrow" data-he="מילון חי של חפצים" data-en="A living object lexicon">מילון חי של חפצים</p><h2 data-he="כלי קפה והאטימולוגיה של שמותיהם" data-en="Coffee tools and the etymology of their names">כלי קפה והאטימולוגיה של שמותיהם</h2><p data-he="לחצו על כלי כדי לפתוח כרטיס מוזיאוני מורחב." data-en="Select a tool to open its expanded museum card.">לחצו על כלי כדי לפתוח כרטיס מוזיאוני מורחב.</p></div>
+      <div id="tool-grid" class="card-grid tool-grid"></div>
+    </section>
+
+    <section class="section closing-section">
+      <div class="closing-card reveal"><span aria-hidden="true">✦</span><div><p class="eyebrow" data-he="האתר בתחילת מסעו" data-en="The atlas is just beginning">האתר בתחילת מסעו</p><h2 data-he="בהמשך נוסיף מפת גידול, מעבדת טעמים ושיטות חליטה." data-en="Next we will add a growing map, flavor lab and brewing methods.">בהמשך נוסיף מפת גידול, מעבדת טעמים ושיטות חליטה.</h2></div></div>
+    </section>
+  </main>
+
+  <footer><p>© <span id="year"></span> Coffee Heritage Atlas</p><p data-he="נבנה כמוזיאון דיגיטלי דו־לשוני" data-en="Built as a bilingual digital museum">נבנה כמוזיאון דיגיטלי דו־לשוני</p></footer>
+
+  <dialog id="museum-dialog" class="museum-dialog"><button class="dialog-close" type="button" aria-label="סגירה">×</button><div id="dialog-content"></div></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
