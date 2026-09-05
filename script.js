@@ -93,10 +93,16 @@ function toolImage(item, expanded = false) {
   const img = `<img class="tool-image${expanded ? ' expanded' : ''}" src="${escapeHTML(item.image)}" alt="${escapeHTML(text(item.altHe, item.altEn))}" width="${item.width}" height="${item.height}" loading="${expanded ? 'eager' : 'lazy'}" decoding="async">`;
   return expanded ? `<a href="${escapeHTML(item.image)}" target="_blank" rel="noopener">${img}<span class="image-hint">${text('פתחו את התמונה המלאה בלשונית חדשה', 'Open the full image in a new tab')}</span></a>` : img;
 }
+function imageCredit(item) {
+  return `<a href="${escapeHTML(item.source)}">${escapeHTML(item.title || item.credit)}</a> · <bdi>${escapeHTML(item.author || '')}</bdi> · <a href="${escapeHTML(item.licenseUrl)}" dir="ltr">${escapeHTML(item.license)}</a><br><span>${text('התמונה הוקטנה והומרה ל־WebP; ללא חיתוך. רישיון התמונה חל גם על הגרסה המותאמת.', 'Resized and converted to WebP; not cropped. The image license also applies to this version.')}</span>`;
+}
+function renderImageCredits() {
+  $('#tool-image-credits').innerHTML = tools.filter(item => item.image).map(item => `<li><strong>${escapeHTML(t(item).name)}</strong> — ${imageCredit(item)}</li>`).join('');
+}
 function renderTools() {
   $('#tool-grid').innerHTML = tools.map((item, i) => {
     const c = t(item);
-    return `<button class="museum-card tool-card" data-index="${i}" type="button" aria-haspopup="dialog">${toolImage(item)}<h3>${escapeHTML(c.name)}</h3><p>${escapeHTML(c.short)}</p><span class="tag">${text('פתחו כרטיס', 'Open card')}</span></button>`;
+    return `<button class="museum-card tool-card" data-index="${i}" type="button" aria-haspopup="dialog">${toolImage(item)}<span class="image-credit">${escapeHTML(item.credit || "")}</span><h3>${escapeHTML(c.name)}</h3><p>${escapeHTML(c.short)}</p><span class="tag">${text('פתחו כרטיס', 'Open card')}</span></button>`;
   }).join('');
   $('#tool-grid').querySelectorAll('button').forEach(button => button.addEventListener('click', () => openTool(Number(button.dataset.index))));
 }
@@ -105,7 +111,7 @@ let activeTool = null;
 function renderDialog() {
   const item = tools[activeTool];
   const c = t(item);
-  $('#dialog-content').innerHTML = `<div class="dialog-hero">${toolImage(item, true)}${item.credit ? `<p class="image-credit"><a href="${escapeHTML(item.source)}">${escapeHTML(item.credit)}</a></p>` : ''}<h2 id="dialog-title">${escapeHTML(c.name)}</h2><p>${escapeHTML(c.short)}</p></div><div class="dialog-body"><h3>${text('מקור השם — מבוא', 'Name origin — introduction')}</h3><p>${escapeHTML(c.origin)}</p><p class="editorial-note">${text('הסבר זה עדיין דורש השלמת אסמכתאות לשוניות.', 'This explanation still needs additional linguistic references.')}</p><h3>${text('אופן השימוש', 'How it is used')}</h3><p>${escapeHTML(c.use)}</p></div>`;
+  $('#dialog-content').innerHTML = `<div class="dialog-hero">${toolImage(item, true)}${item.credit ? `<p class="image-credit">${imageCredit(item)}</p>` : ''}<h2 id="dialog-title">${escapeHTML(c.name)}</h2><p>${escapeHTML(c.short)}</p></div><div class="dialog-body"><h3>${text('מקור השם — מבוא', 'Name origin — introduction')}</h3><p>${escapeHTML(c.origin)}</p><p class="editorial-note">${text('הסבר זה עדיין דורש השלמת אסמכתאות לשוניות.', 'This explanation still needs additional linguistic references.')}</p><h3>${text('אופן השימוש', 'How it is used')}</h3><p>${escapeHTML(c.use)}</p></div>`;
 }
 function openTool(index) {
   activeTool = index;
@@ -159,6 +165,7 @@ function applyLanguage() {
   renderRituals();
   renderVarieties();
   renderTools();
+  renderImageCredits();
   if (dialog.open && activeTool !== null) renderDialog();
 }
 $('#language-toggle').addEventListener('click', () => {

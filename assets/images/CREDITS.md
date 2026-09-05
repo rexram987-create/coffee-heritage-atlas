@@ -30,4 +30,16 @@ The original JPEG files are retained. The following WebP versions use the same c
 - `varieties/coffea-arabica-flower-fruit-600.webp`: longest edge 600 pixels, for narrow screens.
 - `tools/arabic-dallah-coffee-pot.webp`: longest edge 1200 pixels.
 
-The website displays the Dallah photograph with `object-fit: contain` so the complete object is visible, and links to the full derivative image. Icons on other tool cards are illustrative placeholders, not photographs of the tools.
+The website displays the Dallah photograph with `object-fit: contain` so the complete object is visible, and links to the full derivative image. All six tool cards now have photographs.
+
+## Additional tool photographs — September 5, 2026
+
+Downloaded from Wikimedia Commons. Each derivative is resized to a maximum edge of 1000 pixels and converted to WebP without cropping. These image files retain the license specified per row, including ShareAlike where applicable; the MIT code license does not replace their image licenses. Where multiple licenses are offered, the Creative Commons license below is selected.
+
+| Local file | Original title | Creator | Source | Selected license |
+|---|---|---|---|---|
+| `tools/jebena.webp` | Ethiopian traditional coffee pot( Jebena).jpg | Abyssinian cat | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ethiopian_traditional_coffee_pot(_Jebena).jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `tools/finjan.webp` | Finjan Arabic coffee.jpg | أدوّن وأوثق أيامي بالصور | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Finjan_Arabic_coffee.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+| `tools/cezve.webp` | TurkishCoffeePot.jpg | Noumenon | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:TurkishCoffeePot.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| `tools/moka.webp` | Moka2.jpg | Imm808 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Moka2.jpg) | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) |
+| `tools/french-press.webp` | Frenchpress-wiki.jpg | Yongbin | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Frenchpress-wiki.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |

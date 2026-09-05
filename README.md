@@ -40,13 +40,13 @@ node --check script.js
 
 Species are distinguished from cultivated varieties. The four cards are a selection, not a full botanical inventory. Excelsa follows Kew's accepted Coffea dewevrei classification, checked September 5, 2026. Early discovery legends are not presented as documented dates. Ritual summaries describe examples rather than universal rules.
 
-The site links history, botanical and cultural references. Tool etymologies remain introductory and are explicitly marked as needing additional linguistic references. They should not be treated as a fully verified etymological dictionary. Only two photographs are currently included; other tool icons are illustrative placeholders.
+The site links history, botanical and cultural references. Tool etymologies remain introductory and are explicitly marked as needing additional linguistic references. They should not be treated as a fully verified etymological dictionary. All six coffee tools have local Wikimedia Commons photographs with creator credits, source and license links, and resizing/conversion notices.
 
 Code is licensed under MIT (see LICENSE). Photos retain their own licenses, documented in assets/images/CREDITS.md. Existing JPEG originals remain available; WebP derivatives are served on the website.
 
 ## Future work
 
-Additional verified tool photos and linguistic references; world coffee map; expanded variety encyclopedia; production simulator; flavor wheel; brewing methods; optional PWA/offline support.
+Additional linguistic references; world coffee map; expanded variety encyclopedia; production simulator; flavor wheel; brewing methods; optional PWA/offline support.
 
 ## Manual regression checklist
 

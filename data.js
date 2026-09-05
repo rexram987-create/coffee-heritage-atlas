@@ -224,7 +224,19 @@ const coffeeData = {
         "short": "A traditional clay pot from the Horn of Africa.",
         "origin": "The name is common in Amharic and regional languages; its deeper etymology is not fully settled.",
         "use": "Used to brew coffee during the Ethiopian ceremony, commonly over direct heat."
-      }
+      },
+      "title": "Ethiopian traditional coffee pot( Jebena).jpg",
+      "author": "Abyssinian cat",
+      "source": "https://commons.wikimedia.org/wiki/File:Ethiopian_traditional_coffee_pot(_Jebena).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "altHe": "ג׳בנה כהה מחימר על כירת פחמים, במבט מלמעלה",
+      "altEn": "A dark clay jebena on a charcoal stove, viewed from above",
+      "image": "assets/images/tools/jebena.webp",
+      "width": 750,
+      "height": 1000,
+      "credit": "Abyssinian cat · Wikimedia Commons · CC BY-SA 4.0",
+      "modified": true
     },
     {
       "icon": "🫖",
@@ -246,7 +258,12 @@ const coffeeData = {
       },
       "source": "https://commons.wikimedia.org/wiki/File:Arabic_dallah_(coffee_pot).jpg",
       "width": 803,
-      "height": 1200
+      "height": 1200,
+      "author": "Bluehillies",
+      "title": "Arabic dallah (coffee pot).jpg",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "modified": true
     },
     {
       "icon": "🥛",
@@ -261,7 +278,19 @@ const coffeeData = {
         "short": "A small cup, usually without a handle.",
         "origin": "The word traveled through Persian, Arabic and Turkish, with meanings including cup or small vessel.",
         "use": "Used for small servings of Arabic or Turkish coffee."
-      }
+      },
+      "title": "Finjan Arabic coffee.jpg",
+      "author": "أدوّن وأوثق أيامي بالصور",
+      "source": "https://commons.wikimedia.org/wiki/File:Finjan_Arabic_coffee.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "altHe": "ספל פנג׳אן קטן ובו קפה ערבי",
+      "altEn": "A small finjan cup containing Arabic coffee",
+      "image": "assets/images/tools/finjan.webp",
+      "width": 1000,
+      "height": 664,
+      "credit": "أدوّن وأوثق أيامي بالصور · Wikimedia Commons · CC BY 2.0",
+      "modified": true
     },
     {
       "icon": "♨️",
@@ -276,7 +305,19 @@ const coffeeData = {
         "short": "A small long-handled pot for Turkish coffee.",
         "origin": "The Turkish word cezve comes through Ottoman usage from an Arabic term for a small cooking vessel.",
         "use": "Water and finely ground coffee are heated in it until foam forms."
-      }
+      },
+      "title": "TurkishCoffeePot.jpg",
+      "author": "Noumenon",
+      "source": "https://commons.wikimedia.org/wiki/File:TurkishCoffeePot.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "altHe": "ג׳זווה מנחושת עם ידית עץ ארוכה",
+      "altEn": "A copper cezve with a long wooden handle",
+      "image": "assets/images/tools/cezve.webp",
+      "width": 662,
+      "height": 1000,
+      "credit": "Noumenon · Wikimedia Commons · CC BY-SA 3.0",
+      "modified": true
     },
     {
       "icon": "⬡",
@@ -291,7 +332,19 @@ const coffeeData = {
         "short": "An Italian stovetop brewer driven by steam pressure.",
         "origin": "Macchinetta means “small machine”; Moka refers to the Yemeni port of Mocha.",
         "use": "Water rises through the grounds into the upper chamber, producing concentrated coffee rather than true espresso."
-      }
+      },
+      "title": "Moka2.jpg",
+      "author": "Imm808",
+      "source": "https://commons.wikimedia.org/wiki/File:Moka2.jpg",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "altHe": "מקינטה מתכתית להכנת קפה על הכיריים",
+      "altEn": "A metal moka pot for brewing coffee on a stovetop",
+      "image": "assets/images/tools/moka.webp",
+      "width": 835,
+      "height": 1000,
+      "credit": "Imm808 · Wikimedia Commons · CC BY 3.0",
+      "modified": true
     },
     {
       "icon": "⌛",
@@ -306,7 +359,19 @@ const coffeeData = {
         "short": "An immersion brewer with a plunger and metal filter.",
         "origin": "The English name means “French press,” though its invention history also includes Italian patents.",
         "use": "Coarse coffee steeps in water before the plunger separates the brew."
-      }
+      },
+      "title": "Frenchpress-wiki.jpg",
+      "author": "Yongbin",
+      "source": "https://commons.wikimedia.org/wiki/File:Frenchpress-wiki.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "altHe": "כלי פרנץ׳ פרס מזכוכית עם בוכנה",
+      "altEn": "A glass French press coffee maker with a plunger",
+      "image": "assets/images/tools/french-press.webp",
+      "width": 1000,
+      "height": 800,
+      "credit": "Yongbin · Wikimedia Commons · CC BY-SA 3.0",
+      "modified": true
     }
   ]
 };
