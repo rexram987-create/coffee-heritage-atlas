@@ -11,24 +11,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">דלגו לתוכן</a>
+  <a class="skip-link" href="#main" data-he="דלגו לתוכן" data-en="Skip to content">דלגו לתוכן</a>
 
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="דף הבית">
+    <a class="brand" href="#home" aria-label="דף הבית" data-label-he="דף הבית" data-label-en="Home">
       <span class="brand-mark" aria-hidden="true">☕</span>
       <span><strong data-he="אטלס מורשת הקפה" data-en="Coffee Heritage Atlas">אטלס מורשת הקפה</strong><small data-he="מסע בין אדמה, תרבות וטעם" data-en="A journey through land, culture and flavor">מסע בין אדמה, תרבות וטעם</small></span>
     </a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="פתיחת תפריט">☰</button>
-    <nav id="main-nav" class="main-nav" aria-label="ניווט ראשי">
+    <nav id="main-nav" class="main-nav" aria-label="ניווט ראשי" data-label-he="ניווט ראשי" data-label-en="Main navigation">
       <a href="#history" data-he="היסטוריה" data-en="History">היסטוריה</a>
-      <a href="#varieties" data-he="זנים" data-en="Varieties">זנים</a>
+      <a href="#varieties" data-he="מיני קפה" data-en="Coffee species">מיני קפה</a>
       <a href="#rituals" data-he="טקסים" data-en="Rituals">טקסים</a>
       <a href="#tools" data-he="כלים" data-en="Tools">כלים</a>
+    <a href="#sources" data-he="מקורות" data-en="Sources">מקורות</a>
     </nav>
     <button id="language-toggle" class="language-toggle" type="button" aria-label="Switch to English">EN</button>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
+    <noscript><p class="content-note">יש להפעיל JavaScript להצגת הכרטיסים ולהחלפת שפה. Enable JavaScript to explore the interactive cards and switch languages.</p></noscript>
     <section id="home" class="hero">
       <div class="hero-glow hero-glow-one"></div><div class="hero-glow hero-glow-two"></div>
       <div class="hero-content reveal">
@@ -36,10 +38,10 @@
         <h1 data-he="הסיפור העולמי של הקפה, מן הפרי ועד לטקס" data-en="The global story of coffee, from fruit to ritual">הסיפור העולמי של הקפה, מן הפרי ועד לטקס</h1>
         <p class="hero-copy" data-he="גלו כיצד צמח מאפריקה הפך למשקה עולמי, הכירו את הזנים, טקסי האירוח והכלים שעיצבו תרבויות שלמות." data-en="Discover how an African plant became a global drink, and explore the varieties, hospitality rituals and tools that shaped entire cultures.">גלו כיצד צמח מאפריקה הפך למשקה עולמי, הכירו את הזנים, טקסי האירוח והכלים שעיצבו תרבויות שלמות.</p>
         <div class="hero-actions"><a class="button primary" href="#history" data-he="התחילו במסע" data-en="Begin the journey">התחילו במסע</a><a class="button ghost" href="#tools" data-he="גלו את הכלים" data-en="Explore the tools">גלו את הכלים</a></div>
-        <div class="hero-facts" aria-label="עובדות מהירות">
-          <div><strong>70+</strong><span data-he="מדינות מגדלות" data-en="growing countries">מדינות מגדלות</span></div>
-          <div><strong>4</strong><span data-he="מינים מרכזיים" data-en="major species">מינים מרכזיים</span></div>
-          <div><strong>500+</strong><span data-he="שנות תרבות בתי קפה" data-en="years of café culture">שנות תרבות בתי קפה</span></div>
+        <div class="hero-facts" aria-label="עובדות מהירות" data-label-he="עובדות מהירות" data-label-en="At a glance">
+          <div><strong>6</strong><span data-he="תחנות בזמן" data-en="timeline stops">תחנות בזמן</span></div>
+          <div><strong>4</strong><span data-he="כרטיסי מינים" data-en="species profiles">כרטיסי מינים</span></div>
+          <div><strong>3</strong><span data-he="מסורות קפה" data-en="coffee traditions">מסורות קפה</span></div>
         </div>
       </div>
       <div class="hero-art reveal" aria-hidden="true">
@@ -52,7 +54,7 @@
     <section id="history" class="section history-section">
       <div class="section-heading reveal"><p class="eyebrow" data-he="מסע בזמן" data-en="A journey through time">מסע בזמן</p><h2 data-he="תחנות מרכזיות בהיסטוריה של הקפה" data-en="Milestones in coffee history">תחנות מרכזיות בהיסטוריה של הקפה</h2><p data-he="עברו בין התחנות ולחצו עליהן כדי לקרוא את הסיפור." data-en="Move through the milestones and select one to read its story.">עברו בין התחנות ולחצו עליהן כדי לקרוא את הסיפור.</p></div>
       <div class="timeline-shell reveal">
-        <div id="timeline-buttons" class="timeline-buttons" role="tablist" aria-label="ציר זמן"></div>
+        <div id="timeline-buttons" class="timeline-buttons" role="tablist" aria-label="ציר זמן" data-label-he="ציר זמן" data-label-en="Coffee timeline"></div>
         <article id="timeline-panel" class="timeline-panel" role="tabpanel" tabindex="0"></article>
       </div>
     </section>
@@ -60,25 +62,40 @@
     <section id="varieties" class="section alt-section">
       <div class="section-heading reveal"><p class="eyebrow" data-he="מן הצמח אל הספל" data-en="From plant to cup">מן הצמח אל הספל</p><h2 data-he="הכירו את משפחת הקפה" data-en="Meet the coffee family">הכירו את משפחת הקפה</h2><p data-he="כל מין מביא עמו תנאי גידול, אופי וטעמים משלו." data-en="Each species brings its own growing conditions, character and flavors.">כל מין מביא עמו תנאי גידול, אופי וטעמים משלו.</p></div>
       <figure class="reveal" style="max-width:1180px;margin:0 auto 28px;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--paper);box-shadow:var(--shadow)">
-        <img src="assets/images/varieties/coffea-arabica-flower-fruit.jpg" alt="פרחים ופירות צעירים על ענף של צמח קפה ערביקה" data-alt-he="פרחים ופירות צעירים על ענף של צמח קפה ערביקה" data-alt-en="Flowers and young fruit on a Coffea arabica branch" style="display:block;width:100%;max-height:520px;object-fit:cover">
+        <img src="assets/images/varieties/coffea-arabica-flower-fruit.webp" srcset="assets/images/varieties/coffea-arabica-flower-fruit-600.webp 600w, assets/images/varieties/coffea-arabica-flower-fruit.webp 1200w" sizes="(max-width:620px) calc(100vw - 32px), (max-width:1400px) 86vw, 1180px" width="1200" height="1028" loading="lazy" decoding="async" alt="פרחים ופירות צעירים על ענף של צמח קפה ערביקה" data-alt-he="פרחים ופירות צעירים על ענף של צמח קפה ערביקה" data-alt-en="Flowers and young fruit on a Coffea arabica branch" style="display:block;width:100%;max-height:520px;object-fit:contain">
         <figcaption style="padding:14px 18px;color:var(--muted);font-size:.92rem" data-he="קפה ערביקה: פריחה ופירות צעירים. צילום: ゴスロリ, Wikimedia Commons, CC0 1.0." data-en="Coffea arabica: flowers and young fruit. Photo: ゴスロリ, Wikimedia Commons, CC0 1.0.">קפה ערביקה: פריחה ופירות צעירים. צילום: ゴスロリ, Wikimedia Commons, CC0 1.0.</figcaption>
       </figure>
+      <p class="content-note" data-he="מין אינו זן: ערביקה וקנפורה הם מינים; בתוך המינים קיימים זנים רבים. ארבעת הכרטיסים הם מבחר להיכרות, ולא רשימה של כל מיני הקפה." data-en="A species is not a variety: Arabica and Canephora are species, each containing many varieties. These four profiles are an introduction, not a complete list of coffee species.">מין אינו זן: ערביקה וקנפורה הם מינים; בתוך המינים קיימים זנים רבים. ארבעת הכרטיסים הם מבחר להיכרות, ולא רשימה של כל מיני הקפה.</p>
       <div id="variety-grid" class="card-grid variety-grid"></div>
     </section>
 
     <section id="rituals" class="section rituals-section">
       <div class="section-heading reveal"><p class="eyebrow" data-he="יותר ממשקה" data-en="More than a drink">יותר ממשקה</p><h2 data-he="טקסי הקפה ומשמעותם" data-en="Coffee rituals and their meaning">טקסי הקפה ומשמעותם</h2><p data-he="קפה הוא שפה של אירוח, כבוד, קהילה וזמן משותף." data-en="Coffee is a language of hospitality, respect, community and shared time.">קפה הוא שפה של אירוח, כבוד, קהילה וזמן משותף.</p></div>
       <div class="ritual-layout reveal">
-        <div id="ritual-list" class="ritual-list" role="tablist"></div>
-        <article id="ritual-panel" class="ritual-panel" role="tabpanel"></article>
+        <div id="ritual-list" class="ritual-list" role="tablist" aria-label="מסורות קפה" data-label-he="מסורות קפה" data-label-en="Coffee traditions"></div>
+        <article id="ritual-panel" class="ritual-panel" role="tabpanel" tabindex="0"></article>
       </div>
     </section>
 
     <section id="tools" class="section alt-section">
       <div class="section-heading reveal"><p class="eyebrow" data-he="מילון חי של חפצים" data-en="A living object lexicon">מילון חי של חפצים</p><h2 data-he="כלי קפה והאטימולוגיה של שמותיהם" data-en="Coffee tools and the etymology of their names">כלי קפה והאטימולוגיה של שמותיהם</h2><p data-he="לחצו על כלי כדי לפתוח כרטיס מוזיאוני מורחב." data-en="Select a tool to open its expanded museum card.">לחצו על כלי כדי לפתוח כרטיס מוזיאוני מורחב.</p></div>
+      <p class="content-note" data-he="סמלים בכרטיסים ללא צילום הם להמחשה בלבד. הסברי מקור השמות הם מבוא, ועדיין דורשים השלמת מקורות לשוניים." data-en="Symbols on cards without photographs are illustrative only. The name origins are introductory and still require additional linguistic references.">סמלים בכרטיסים ללא צילום הם להמחשה בלבד. הסברי מקור השמות הם מבוא, ועדיין דורשים השלמת מקורות לשוניים.</p>
       <div id="tool-grid" class="card-grid tool-grid"></div>
     </section>
 
+    <section id="sources" class="section sources-section">
+      <div class="section-heading"><h2 data-he="מקורות וקרדיטים" data-en="Sources and credits">מקורות וקרדיטים</h2></div>
+      <p class="content-note" data-he="מקורות להיסטוריה, לסיווג הבוטני ולמסורות הקפה. התיאורים תמציתיים; מנהגים משתנים בין אזורים וקהילות." data-en="References for history, botanical classification and coffee traditions. These are brief introductions; practices vary between regions and communities.">מקורות להיסטוריה, לסיווג הבוטני ולמסורות הקפה. התיאורים תמציתיים; מנהגים משתנים בין אזורים וקהילות.</p>
+      <ul class="sources-list">
+        <li><a href="https://www.aboutcoffee.org/origins/history-of-coffee/" data-he="היסטוריה — איגוד הקפה הלאומי של ארצות הברית" data-en="History — National Coffee Association">היסטוריה — איגוד הקפה הלאומי של ארצות הברית</a></li>
+        <li><a href="https://varieties.worldcoffeeresearch.org/" data-he="מינים וזנים — World Coffee Research" data-en="Species and varieties — World Coffee Research">מינים וזנים — World Coffee Research</a></li>
+        <li><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:747092-1" data-he="אקסלסה — הסיווג העדכני במאגר Kew" data-en="Excelsa — current classification at Kew">אקסלסה — הסיווג העדכני במאגר Kew</a></li>
+        <li><a href="https://ich.unesco.org/en/RL/arabic-coffee-a-symbol-of-generosity-02111" data-he="מסורת הקפה הערבי — אונסקו" data-en="Arabic coffee heritage — UNESCO">מסורת הקפה הערבי — אונסקו</a></li>
+        <li><a href="https://ich.unesco.org/en/RL/turkish-coffee-culture-and-tradition-00645" data-he="מסורת הקפה הטורקי — אונסקו" data-en="Turkish coffee heritage — UNESCO">מסורת הקפה הטורקי — אונסקו</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Planta_coffea_arabiga.jpg" data-he="צילום הערביקה: ゴスロリ — מקור וקרדיט (CC0)" data-en="Arabica photo: ゴスロリ — source and credit (CC0)">צילום הערביקה: ゴスロリ — מקור וקרדיט (CC0)</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Arabic_dallah_(coffee_pot).jpg" data-he="צילום הדלה: Bluehillies — מקור וקרדיט (CC0)" data-en="Dallah photo: Bluehillies — source and credit (CC0)">צילום הדלה: Bluehillies — מקור וקרדיט (CC0)</a></li>
+      </ul>
+    </section>
     <section class="section closing-section">
       <div class="closing-card reveal"><span aria-hidden="true">✦</span><div><p class="eyebrow" data-he="האתר בתחילת מסעו" data-en="The atlas is just beginning">האתר בתחילת מסעו</p><h2 data-he="בהמשך נוסיף מפת גידול, מעבדת טעמים ושיטות חליטה." data-en="Next we will add a growing map, flavor lab and brewing methods.">בהמשך נוסיף מפת גידול, מעבדת טעמים ושיטות חליטה.</h2></div></div>
     </section>
@@ -86,7 +103,8 @@
 
   <footer><p>© <span id="year"></span> Coffee Heritage Atlas</p><p data-he="נבנה כמוזיאון דיגיטלי דו־לשוני" data-en="Built as a bilingual digital museum">נבנה כמוזיאון דיגיטלי דו־לשוני</p></footer>
 
-  <dialog id="museum-dialog" class="museum-dialog"><button class="dialog-close" type="button" aria-label="סגירה">×</button><div id="dialog-content"></div></dialog>
+  <dialog id="museum-dialog" class="museum-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="סגירה">×</button><div id="dialog-content"></div></dialog>
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

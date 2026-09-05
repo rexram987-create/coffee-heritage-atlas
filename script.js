@@ -1,41 +1,174 @@
-const state={lang:'he',timeline:0,ritual:0};
-const timeline=[
-{year:'c. 9th–15th c.',he:{title:'מאתיופיה אל תימן',text:'מקורותיו הבוטניים של הקפה מצויים באפריקה המזרחית. בתימן התפתחו גידול שיטתי, מסחר ותרבות שתייה שהפכו את הקפה למשקה מוכר.'},en:{title:'From Ethiopia to Yemen',text:'Coffee’s botanical origins lie in East Africa. In Yemen, systematic cultivation, trade and a distinct drinking culture helped turn it into a recognized beverage.'}},
-{year:'16th c.',he:{title:'בתי הקפה בעולם העות׳מאני',text:'בתי קפה באיסטנבול ובערים אחרות הפכו למקומות מפגש, שיחה, משחקים, מוזיקה והחלפת חדשות.'},en:{title:'Coffeehouses in the Ottoman world',text:'Coffeehouses in Istanbul and other cities became places for conversation, games, music and the exchange of news.'}},
-{year:'17th c.',he:{title:'הקפה מגיע לאירופה',text:'נמלים, סוחרים ובתי קפה הפיצו את המשקה בוונציה, לונדון, פריז ווינה. בתי הקפה הפכו למוקדי מסחר ורעיונות.'},en:{title:'Coffee reaches Europe',text:'Ports, merchants and coffeehouses spread the drink through Venice, London, Paris and Vienna, where cafés became hubs of commerce and ideas.'}},
-{year:'18th–19th c.',he:{title:'מטעים וסחר עולמי',text:'הקפה הועבר לאסיה, לאיים הקריביים ולאמריקה הלטינית. התרחבות זו הייתה כרוכה גם בקולוניאליזם ובעבודת כפייה.'},en:{title:'Plantations and global trade',text:'Coffee spread to Asia, the Caribbean and Latin America. This expansion was also deeply tied to colonialism and coerced labor.'}},
-{year:'20th c.',he:{title:'אספרסו, קפה נמס ותרבות המונים',text:'טכנולוגיות חדשות קיצרו את ההכנה, שינו את בתי הקפה והכניסו את הקפה כמעט לכל בית.'},en:{title:'Espresso, instant coffee and mass culture',text:'New technologies shortened preparation, transformed cafés and brought coffee into homes around the world.'}},
-{year:'Today',he:{title:'גל של מקור, איכות וקיימות',text:'צרכנים ובתי קלייה מתעניינים בזן, בחווה, בגובה, בעיבוד ובסחר הוגן — ומבקשים להכיר את הסיפור שמאחורי הכוס.'},en:{title:'A focus on origin, quality and sustainability',text:'Drinkers and roasters increasingly care about variety, farm, altitude, processing and fairness—and the story behind the cup.'}}
-];
-const varieties=[
-{icon:'🌿',tagHe:'עדין וארומטי',tagEn:'Delicate & aromatic',he:{name:'ערביקה',desc:'המין הנפוץ ביותר בקפה איכותי; גדל לרוב בגבהים ומציע מגוון רחב של ארומות.'},en:{name:'Arabica',desc:'The dominant species in specialty coffee, often grown at elevation with a broad aromatic range.'}},
-{icon:'⚡',tagHe:'עוצמתי ועשיר בקפאין',tagEn:'Bold & high caffeine',he:{name:'קנפורה — רובוסטה',desc:'עמיד יותר לחום ולמחלות, בעל גוף כבד ומרירות מודגשת. נפוץ בתערובות אספרסו.'},en:{name:'Canephora — Robusta',desc:'More tolerant of heat and disease, with heavier body and stronger bitterness. Common in espresso blends.'}},
-{icon:'🍃',tagHe:'נדיר ובעל אופי',tagEn:'Rare & distinctive',he:{name:'ליבריקה',desc:'עץ גבוה בעל פולים גדולים ופרופיל טעם יוצא דופן, המזוהה במיוחד עם דרום־מזרח אסיה.'},en:{name:'Liberica',desc:'A tall tree with large beans and an unusual flavor profile, especially associated with Southeast Asia.'}},
-{icon:'✦',tagHe:'מורשת וטעם ייחודי',tagEn:'Heritage & unique flavor',he:{name:'אקסלסה',desc:'קבוצה בוטנית הקשורה לליבריקה, המוערכת בזכות חומציות פירותית וארומות מורכבות.'},en:{name:'Excelsa',desc:'A botanical group related to Liberica, valued for fruity acidity and layered aromas.'}}
-];
-const rituals=[
-{icon:'🇪🇹',he:{name:'הטקס האתיופי',place:'אתיופיה ואריתריאה',text:'הכנת הקפה נעשית לעיני האורחים: קלייה, כתישה, חליטה בג׳בנה ומזיגה לספלים קטנים. הזמן הממושך מדגיש כבוד, קהילה ושיחה.',steps:['קלייה','כתישה','חליטה בג׳בנה','שלושה סבבים']},en:{name:'Ethiopian coffee ceremony',place:'Ethiopia and Eritrea',text:'Coffee is prepared before the guests: roasting, grinding, brewing in a jebena and serving in small cups. The unhurried process honors community and conversation.',steps:['Roasting','Grinding','Jebena brewing','Three rounds']}},
-{icon:'🏜️',he:{name:'הקפה הערבי',place:'חצי האי ערב והמרחב הבדואי',text:'הדלה והפנג׳אן עומדים במרכז שפה חברתית של הכנסת אורחים. סדר ההגשה, היד הימנית והכמות הקטנה בכוס מבטאים כבוד ונימוס.',steps:['קלייה בהירה','תבלינים','מזיגה בדלה','הגשה ביד ימין']},en:{name:'Arabic coffee hospitality',place:'Arabian Peninsula and Bedouin communities',text:'The dallah and finjan form part of a social language of hospitality. Serving order, the right hand and the small pour all communicate respect.',steps:['Light roast','Spices','Dallah pouring','Right-hand service']}},
-{icon:'🇹🇷',he:{name:'המסורת הטורקית',place:'טורקיה והעולם העות׳מאני',text:'קפה טחון דק מבושל בג׳זווה ומוגש עם המשקע. הוא קשור לאירוח, למפגש חברתי ולמנהגים עממיים של קריאה במשקעי הקפה.',steps:['טחינה דקה','בישול בג׳זווה','קצף','הגשה עם המשקע']},en:{name:'Turkish coffee tradition',place:'Türkiye and the Ottoman world',text:'Finely ground coffee is brewed in a cezve and served with its sediment. It is tied to hospitality, social life and folk traditions of reading the grounds.',steps:['Fine grind','Cezve brewing','Foam','Served unfiltered']}}
-];
-const tools=[
-{icon:'🏺',he:{name:'ג׳בנה',short:'קנקן חרס מסורתי מקרן אפריקה.',origin:'השם נפוץ באמהרית ובשפות האזור; מסלולו האטימולוגי המדויק אינו מוסכם לחלוטין.',use:'משמש לחליטת קפה בטקס האתיופי, לרוב מעל מקור חום ישיר.'},en:{name:'Jebena',short:'A traditional clay pot from the Horn of Africa.',origin:'The name is common in Amharic and regional languages; its deeper etymology is not fully settled.',use:'Used to brew coffee during the Ethiopian ceremony, commonly over direct heat.'}},
-{icon:'🫖',image:'assets/images/tools/arabic-dallah-coffee-pot.jpg',altHe:'שני קנקני דלה ערביים מעוטרים ממתכת',altEn:'Two ornate metal Arabic dallah coffee pots',credit:'Bluehillies · Wikimedia Commons · CC0',he:{name:'דלה',short:'קנקן הקפה המזוהה עם חצי האי ערב.',origin:'המילה הערבית دَلَّة‎ מציינת את קנקן הקפה בעל הזרבובית הארוכה.',use:'להכנה, שמירה והגשה של קפה ערבי לספלי פנג׳אן קטנים.'},en:{name:'Dallah',short:'The coffee pot strongly associated with the Arabian Peninsula.',origin:'The Arabic word دَلَّة refers to the long-spouted coffee pot.',use:'Used to prepare, hold and pour Arabic coffee into small finjan cups.'}},
-{icon:'🥛',he:{name:'פנג׳אן',short:'ספל קטן, בדרך כלל ללא ידית.',origin:'המילה עברה בין פרסית, ערבית וטורקית. בשפות שונות היא יכולה לציין ספל, כוס או כלי קטן.',use:'להגשת מנות קטנות של קפה ערבי או טורקי.'},en:{name:'Finjan',short:'A small cup, usually without a handle.',origin:'The word traveled through Persian, Arabic and Turkish, with meanings including cup or small vessel.',use:'Used for small servings of Arabic or Turkish coffee.'}},
-{icon:'♨️',he:{name:'ג׳זווה',short:'כלי קטן בעל ידית ארוכה להכנת קפה טורקי.',origin:'השם הטורקי cezve קשור למונח עות׳מאני שמקורו בערבית, לציון כלי בישול קטן.',use:'מחממים בו מים וקפה טחון דק עד להיווצרות קצף.'},en:{name:'Cezve',short:'A small long-handled pot for Turkish coffee.',origin:'The Turkish word cezve comes through Ottoman usage from an Arabic term for a small cooking vessel.',use:'Water and finely ground coffee are heated in it until foam forms.'}},
-{icon:'⬡',he:{name:'מקינטה',short:'קנקן איטלקי לכיריים המשתמש בלחץ אדים.',origin:'הכינוי העברי־איטלקי קשור ל־macchinetta, “מכונה קטנה”. Moka מפנה לנמל מוח׳א שבתימן.',use:'מים עולים דרך הקפה הטחון אל התא העליון; התוצאה מרוכזת אך אינה אספרסו אמיתי.'},en:{name:'Moka pot',short:'An Italian stovetop brewer driven by steam pressure.',origin:'Macchinetta means “small machine”; Moka refers to the Yemeni port of Mocha.',use:'Water rises through the grounds into the upper chamber, producing concentrated coffee rather than true espresso.'}},
-{icon:'⌛',he:{name:'פרנץ׳ פרס',short:'כלי חליטה עם בוכנה ומסנן מתכתי.',origin:'השם האנגלי פירושו “מכבש צרפתי”, אף שהיסטוריית ההמצאה כוללת גם פטנטים איטלקיים.',use:'משרים קפה גס במים ולאחר מכן מורידים את הבוכנה להפרדת המשקה.'},en:{name:'French press',short:'An immersion brewer with a plunger and metal filter.',origin:'The English name means “French press,” though its invention history also includes Italian patents.',use:'Coarse coffee steeps in water before the plunger separates the brew.'}}
-];
-function t(obj){return obj[state.lang]}
-function renderTimeline(){const buttons=document.querySelector('#timeline-buttons');buttons.innerHTML=timeline.map((item,i)=>`<button class="timeline-button ${i===state.timeline?'active':''}" role="tab" aria-selected="${i===state.timeline}" data-index="${i}">${item.year}</button>`).join('');const item=timeline[state.timeline],copy=t(item);document.querySelector('#timeline-panel').innerHTML=`<div class="timeline-year">${item.year}</div><div><h3>${copy.title}</h3><p>${copy.text}</p></div>`;buttons.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{state.timeline=Number(btn.dataset.index);renderTimeline()}))}
-function renderVarieties(){document.querySelector('#variety-grid').innerHTML=varieties.map(item=>{const c=t(item);return `<article class="museum-card reveal"><div class="icon" aria-hidden="true">${item.icon}</div><h3>${c.name}</h3><p>${c.desc}</p><span class="tag">${state.lang==='he'?item.tagHe:item.tagEn}</span></article>`}).join('');observeReveals()}
-function renderRituals(){const list=document.querySelector('#ritual-list');list.innerHTML=rituals.map((item,i)=>{const c=t(item);return `<button class="ritual-tab ${i===state.ritual?'active':''}" role="tab" aria-selected="${i===state.ritual}" data-index="${i}">${item.icon} ${c.name}<small>${c.place}</small></button>`}).join('');const c=t(rituals[state.ritual]);document.querySelector('#ritual-panel').innerHTML=`<h3>${c.name}</h3><p>${c.text}</p><div class="ritual-steps">${c.steps.map(x=>`<span>${x}</span>`).join('')}</div>`;list.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{state.ritual=Number(btn.dataset.index);renderRituals()}))}
-function toolImage(item){if(!item.image)return `<div class="icon" aria-hidden="true">${item.icon}</div>`;const alt=state.lang==='he'?item.altHe:item.altEn;return `<img src="${item.image}" alt="${alt}" loading="lazy" style="width:100%;height:190px;object-fit:cover;border-radius:16px;margin-bottom:18px;display:block">`}
-function renderTools(){document.querySelector('#tool-grid').innerHTML=tools.map((item,i)=>{const c=t(item);return `<button class="museum-card tool-card reveal" data-index="${i}" type="button">${toolImage(item)}<h3>${c.name}</h3><p>${c.short}</p><span class="tag">${state.lang==='he'?'פתחו כרטיס':'Open card'}</span></button>`}).join('');document.querySelectorAll('.tool-card').forEach(btn=>btn.addEventListener('click',()=>openTool(Number(btn.dataset.index))));observeReveals()}
-function openTool(i){const item=tools[i],c=t(item),alt=state.lang==='he'?item.altHe:item.altEn;const visual=item.image?`<img src="${item.image}" alt="${alt}" style="width:100%;max-height:320px;object-fit:cover;display:block"><p style="font-size:.75rem;margin:8px 34px 0;color:var(--muted)">${item.credit}</p>`:`<div class="dialog-icon">${item.icon}</div>`;document.querySelector('#dialog-content').innerHTML=`<div class="dialog-hero">${visual}<h2>${c.name}</h2><p>${c.short}</p></div><div class="dialog-body"><h3>${state.lang==='he'?'אטימולוגיה':'Etymology'}</h3><p>${c.origin}</p><h3>${state.lang==='he'?'אופן השימוש':'How it is used'}</h3><p>${c.use}</p></div>`;document.querySelector('#museum-dialog').showModal()}
-function applyLanguage(){const root=document.documentElement,body=document.body;root.lang=state.lang;root.dir=state.lang==='he'?'rtl':'ltr';body.classList.toggle('lang-en',state.lang==='en');document.querySelectorAll('[data-he][data-en]').forEach(el=>el.textContent=el.dataset[state.lang]);const toggle=document.querySelector('#language-toggle');toggle.textContent=state.lang==='he'?'EN':'עב';toggle.setAttribute('aria-label',state.lang==='he'?'Switch to English':'מעבר לעברית');document.querySelector('.menu-button').setAttribute('aria-label',state.lang==='he'?'פתיחת תפריט':'Open menu');document.querySelector('.dialog-close').setAttribute('aria-label',state.lang==='he'?'סגירה':'Close');renderTimeline();renderVarieties();renderRituals();renderTools()}
-function observeReveals(){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal:not(.visible)').forEach(el=>observer.observe(el))}
-document.querySelector('#language-toggle').addEventListener('click',()=>{state.lang=state.lang==='he'?'en':'he';applyLanguage()});
-const menuButton=document.querySelector('.menu-button'),nav=document.querySelector('#main-nav');menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
-const dialog=document.querySelector('#museum-dialog');document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{const rect=dialog.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)dialog.close()});
-document.querySelector('#year').textContent=new Date().getFullYear();applyLanguage();observeReveals();
+'use strict';
+
+const { timeline, varieties, rituals, tools } = coffeeData;
+const state = { lang: 'he', timeline: 0, ritual: 0 };
+try {
+  const saved = localStorage.getItem('coffee-atlas-language');
+  if (saved === 'he' || saved === 'en') state.lang = saved;
+} catch { /* Browsing with storage disabled still works. */ }
+const $ = selector => document.querySelector(selector);
+const text = (he, en) => state.lang === 'he' ? he : en;
+const t = item => item[state.lang];
+const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+}[char]));
+
+// One observer for the lifetime of the page. Content remains visible without JS.
+const revealObserver = 'IntersectionObserver' in window
+  ? new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    }
+  }, { threshold: 0.12 }) : null;
+function observeReveals() {
+  if (!revealObserver) return;
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+}
+
+// Selection updates existing buttons, preserving focus and horizontal scroll.
+function setupTabs(listSelector, panelSelector, items, key, label, renderPanel) {
+  const list = $(listSelector);
+  const panel = $(panelSelector);
+  const prefix = key + '-tab-';
+  function select(index, focus = false) {
+    state[key] = index;
+    [...list.children].forEach((button, i) => {
+      button.classList.toggle('active', i === index);
+      button.setAttribute('aria-selected', String(i === index));
+      button.tabIndex = i === index ? 0 : -1;
+    });
+    panel.setAttribute('aria-labelledby', prefix + index);
+    renderPanel(items[index], panel);
+    if (focus) list.children[index].focus();
+  }
+  function render() {
+    list.replaceChildren(...items.map((item, i) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.id = prefix + i;
+      button.className = key === 'timeline' ? 'timeline-button' : 'ritual-tab';
+      button.setAttribute('role', 'tab');
+      button.setAttribute('aria-controls', panel.id);
+      button.innerHTML = label(item);
+      button.addEventListener('click', () => select(i));
+      button.addEventListener('keydown', event => {
+        let next = i;
+        const direction = state.lang === 'he' ? -1 : 1;
+        if (event.key === 'ArrowRight') next += direction;
+        else if (event.key === 'ArrowLeft') next -= direction;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = items.length - 1;
+        else return;
+        event.preventDefault();
+        select((next + items.length) % items.length, true);
+      });
+      return button;
+    }));
+    select(state[key]);
+  }
+  return render;
+}
+const renderTimeline = setupTabs('#timeline-buttons', '#timeline-panel', timeline, 'timeline',
+  item => escapeHTML(t(item).year), (item, panel) => {
+    const c = t(item);
+    panel.innerHTML = `<div class="timeline-year">${escapeHTML(c.year)}</div><div><h3>${escapeHTML(c.title)}</h3><p>${escapeHTML(c.text)}</p><a class="source-link" href="#sources">${text('מקורות להיסטוריה', 'History references')}</a></div>`;
+  });
+const renderRituals = setupTabs('#ritual-list', '#ritual-panel', rituals, 'ritual',
+  item => `<span aria-hidden="true">${item.icon}</span> ${escapeHTML(t(item).name)}<small>${escapeHTML(t(item).place)}</small>`,
+  (item, panel) => {
+    const c = t(item);
+    panel.innerHTML = `<h3>${escapeHTML(c.name)}</h3><p>${escapeHTML(c.text)}</p><div class="ritual-steps">${c.steps.map(step => `<span>${escapeHTML(step)}</span>`).join('')}</div><p class="ritual-note">${text('המנהגים משתנים בין אזורים, משפחות וקהילות.', 'Practices vary between regions, families and communities.')}</p><a class="source-link" href="#sources">${text('מקורות וקריאה נוספת', 'References and further reading')}</a>`;
+  });
+function renderVarieties() {
+  $('#variety-grid').innerHTML = varieties.map(item => {
+    const c = t(item);
+    return `<article class="museum-card"><div class="icon" aria-hidden="true">${item.icon}</div><h3>${escapeHTML(c.name)}</h3><p class="scientific-name" lang="la" dir="ltr">${escapeHTML(item.scientificName)}</p><p>${escapeHTML(c.desc)}</p><span class="tag">${escapeHTML(text(item.tagHe, item.tagEn))}</span>${item.source ? `<a class="source-link" href="${escapeHTML(item.source)}">${text('סיווג בוטני — Kew', 'Botanical classification — Kew')}</a>` : ''}</article>`;
+  }).join('');
+}
+function toolImage(item, expanded = false) {
+  if (!item.image) return `<div class="${expanded ? 'dialog-icon' : 'icon'}" aria-hidden="true">${item.icon}</div>`;
+  const img = `<img class="tool-image${expanded ? ' expanded' : ''}" src="${escapeHTML(item.image)}" alt="${escapeHTML(text(item.altHe, item.altEn))}" width="${item.width}" height="${item.height}" loading="${expanded ? 'eager' : 'lazy'}" decoding="async">`;
+  return expanded ? `<a href="${escapeHTML(item.image)}" target="_blank" rel="noopener">${img}<span class="image-hint">${text('פתחו את התמונה המלאה בלשונית חדשה', 'Open the full image in a new tab')}</span></a>` : img;
+}
+function renderTools() {
+  $('#tool-grid').innerHTML = tools.map((item, i) => {
+    const c = t(item);
+    return `<button class="museum-card tool-card" data-index="${i}" type="button" aria-haspopup="dialog">${toolImage(item)}<h3>${escapeHTML(c.name)}</h3><p>${escapeHTML(c.short)}</p><span class="tag">${text('פתחו כרטיס', 'Open card')}</span></button>`;
+  }).join('');
+  $('#tool-grid').querySelectorAll('button').forEach(button => button.addEventListener('click', () => openTool(Number(button.dataset.index))));
+}
+const dialog = $('#museum-dialog');
+let activeTool = null;
+function renderDialog() {
+  const item = tools[activeTool];
+  const c = t(item);
+  $('#dialog-content').innerHTML = `<div class="dialog-hero">${toolImage(item, true)}${item.credit ? `<p class="image-credit"><a href="${escapeHTML(item.source)}">${escapeHTML(item.credit)}</a></p>` : ''}<h2 id="dialog-title">${escapeHTML(c.name)}</h2><p>${escapeHTML(c.short)}</p></div><div class="dialog-body"><h3>${text('מקור השם — מבוא', 'Name origin — introduction')}</h3><p>${escapeHTML(c.origin)}</p><p class="editorial-note">${text('הסבר זה עדיין דורש השלמת אסמכתאות לשוניות.', 'This explanation still needs additional linguistic references.')}</p><h3>${text('אופן השימוש', 'How it is used')}</h3><p>${escapeHTML(c.use)}</p></div>`;
+}
+function openTool(index) {
+  activeTool = index;
+  renderDialog();
+  dialog.showModal();
+}
+$('.dialog-close').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', event => {
+  const rect = dialog.getBoundingClientRect();
+  if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+});
+dialog.addEventListener('close', () => { activeTool = null; });
+
+const menuButton = $('.menu-button');
+const nav = $('#main-nav');
+function setMenu(open, restoreFocus = false) {
+  nav.classList.toggle('open', open);
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? text('סגירת תפריט', 'Close menu') : text('פתיחת תפריט', 'Open menu'));
+  if (restoreFocus) menuButton.focus();
+}
+menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  setMenu(false);
+  // Move keyboard focus out of the now-hidden mobile navigation.
+  const section = $(link.getAttribute('href'));
+  if (section) {
+    section.tabIndex = -1;
+    section.focus({ preventScroll: true });
+  }
+}));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav.classList.contains('open') && !dialog.open) setMenu(false, true);
+});
+document.addEventListener('click', event => {
+  if (!nav.contains(event.target) && !menuButton.contains(event.target) && nav.classList.contains('open')) setMenu(false);
+});
+function applyLanguage() {
+  document.documentElement.lang = state.lang;
+  document.documentElement.dir = text('rtl', 'ltr');
+  document.body.classList.toggle('lang-en', state.lang === 'en');
+  document.querySelectorAll('[data-he][data-en]').forEach(el => { el.textContent = el.dataset[state.lang]; });
+  document.querySelectorAll('[data-label-he][data-label-en]').forEach(el => el.setAttribute('aria-label', text(el.dataset.labelHe, el.dataset.labelEn)));
+  document.querySelectorAll('[data-alt-he][data-alt-en]').forEach(el => { el.alt = text(el.dataset.altHe, el.dataset.altEn); });
+  const toggle = $('#language-toggle');
+  toggle.textContent = text('EN', 'עב');
+  toggle.setAttribute('aria-label', text('Switch to English', 'מעבר לעברית'));
+  $('.dialog-close').setAttribute('aria-label', text('סגירה', 'Close'));
+  setMenu(nav.classList.contains('open'));
+  renderTimeline();
+  renderRituals();
+  renderVarieties();
+  renderTools();
+  if (dialog.open && activeTool !== null) renderDialog();
+}
+$('#language-toggle').addEventListener('click', () => {
+  state.lang = text('en', 'he');
+  try { localStorage.setItem('coffee-atlas-language', state.lang); } catch { /* Optional persistence. */ }
+  applyLanguage();
+});
+$('#year').textContent = new Date().getFullYear();
+applyLanguage();
+if (revealObserver) {
+  document.documentElement.classList.add('motion-ready');
+  observeReveals();
+}

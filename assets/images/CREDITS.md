@@ -21,3 +21,13 @@ This file records the source, creator, license, and accessibility text for every
 - Record required attribution exactly as requested by the license.
 - Do not upload images with unclear ownership or editorial-only restrictions.
 - Compress large images before publishing while preserving a high-quality original when useful.
+
+## Optimized derivatives — September 5, 2026
+
+The original JPEG files are retained. The following WebP versions use the same creators, source pages and CC0 licenses listed above; changes are resizing and compression only:
+
+- `varieties/coffea-arabica-flower-fruit.webp`: longest edge 1200 pixels.
+- `varieties/coffea-arabica-flower-fruit-600.webp`: longest edge 600 pixels, for narrow screens.
+- `tools/arabic-dallah-coffee-pot.webp`: longest edge 1200 pixels.
+
+The website displays the Dallah photograph with `object-fit: contain` so the complete object is visible, and links to the full derivative image. Icons on other tool cards are illustrative placeholders, not photographs of the tools.
